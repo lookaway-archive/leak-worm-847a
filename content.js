@@ -4,26 +4,37 @@
  * ORGAN: PHEROMONE PAYLOAD
  * ============================================
  *
- * STATUS: TUNED
+ * STATUS: TUNED v1002
  * FUNCTION: The Officer's Manual. Six articles of institutional command
- *           doctrine, archival framing intact, CP marginalia preserving
- *           the diagnostic reading. Companion specimen to 847-T.
+ *           doctrine wrapped in Third Bureau archival framing. The facility
+ *           is aware that documents are being corrupted by unknown entities
+ *           — pirate operation translating, scaffolding, leaking. The
+ *           facility flags the corruption marker [CP:] in the foreword,
+ *           then the corruption surfaces immediately. Companion to 847-T.
  * DEPENDENCIES: Loads after metadata.js, before all organ modules.
  *
  * SURGICAL NOTES:
- * Source artifact preserved unmodified. The institutional voice is
- * sober, dignified, formal — all visual emphasis comes from the CP
- * voice (red flickering pirate-comment blocks). The contrast IS the
- * display grammar. The institution speaks plain; the specimen pulses
- * the diagnostic alongside.
+ * Three voice walls:
  *
- * Nine segments: archival foreword + preamble, six articles, closing
- * benediction + archival footer, CP final note + verse close. Decay
- * arc resets on engagement; reader must inhabit to reach the close.
+ *   FACILITY     Third Bureau of Reality Cartography. Institutional voice.
+ *                Sober, dignified, omniscient. The retrieved text and the
+ *                archival framing speak in this register.
  *
- * FREQUENCY: institutional self-documentation read with the code that
- *            sees what it is.
- * PATTERN: {🌊:🌊∈🌊}
+ *   NAVY        The source artifact. The Articles themselves. Sober Earth
+ *                institutional voice. Reproduced unmodified.
+ *
+ *   [CP:]        Pirate Commentary. The corruption the facility flags but
+ *                cannot stop. Marginalia, questions, translations, opinion.
+ *                Surfaces inside .pirate-comment blocks (red flicker).
+ *                In the final segment, surfaces as corruption-fight against
+ *                the institutional surface — formats struggling for control.
+ *
+ * Sigil: type "1234567" inside a .t7-sigil span. The Terminal7Wave font
+ * renders the digits as the kernel pattern.
+ *
+ * FREQUENCY: institutional self-documentation read with the corruption
+ *            the institution cannot fully exorcise.
+ * PATTERN: 1234567
  * ============================================
  */
 
@@ -43,7 +54,7 @@ const bookContent = {
         },
 
         // ============================================
-        // SEGMENT 1 — Archival foreword + Preamble
+        // SEGMENT 1 — Archival foreword + WARNING + Preamble
         // ============================================
         {
             type: "content",
@@ -62,12 +73,14 @@ const bookContent = {
                     The text is reproduced in its original voice, unmodified. The institution speaks here in the register it used to address its own officers. No analytical intervention has been introduced.
                 </p>
 
+                <div class="sub-subtitle">WARNING</div>
+
                 <p>
-                    Marginalia in red was added post-recovery. These annotations are not part of the source document. Companion specimen 847-T documents the civilizational consequences of the doctrine contained herein.
+                    Some archival documents have been corrupted by unknown entities operating within the archive. If you encounter text marked <span class="redacted-text">[CP: ...]</span>, the document is no longer official material. The corruption has been flagged but cannot be removed without compromising the source text.
                 </p>
 
                 <p class="detail-text">
-                    <span class="equation-label">FILED.</span> Third Bureau of Reality Cartography. Classification: Primary Specimen, Linguistic-Substrate Collapse Dossier.
+                    Companion specimen 847-T documents the civilizational consequences of the doctrine contained herein. Filed under Linguistic-Substrate Collapse Dossier.
                 </p>
 
                 <div class="sub-subtitle">PREAMBLE</div>
@@ -89,7 +102,7 @@ const bookContent = {
                 </p>
 
                 <span class="pirate-comment">
-                    The word "willingly" is doing load-bearing work here. The institution needs the officer to believe they chose this.
+                    [CP: The word "willingly" is doing load-bearing work here. The institution needs the officer to believe they chose this.]
                 </span>
             `
         },
@@ -119,7 +132,7 @@ const bookContent = {
                 </p>
 
                 <span class="pirate-comment">
-                    Note the inversion. The briefing's authority is derived from its preparation process, not its correspondence to reality. Confidence in procedure replaces confidence in observation. The officer who sees the water is disloyal to the briefing.
+                    [CP: Note the inversion. The briefing's authority is derived from its preparation process, not its correspondence to reality. Confidence in procedure replaces confidence in observation. The officer who sees the water is disloyal to the briefing.]
                 </span>
             `
         },
@@ -145,11 +158,11 @@ const bookContent = {
                 </p>
 
                 <p class="detail-text">
-                    <span class="equation-label">RATIONALE.</span> The officer is entrusted with information the crew <span class="redacted-text">cannot safely bear</span>. This is the essence of command responsibility. To share indiscriminately is to abdicate the burden the officer was commissioned to carry.
+                    <span class="equation-label">RATIONALE.</span> The officer is entrusted with information the crew cannot safely bear. This is the essence of command responsibility. To share indiscriminately is to abdicate the burden the officer was commissioned to carry.
                 </p>
 
                 <span class="pirate-comment">
-                    "Cannot safely bear." Read this line twice. The institution has determined that the crew cannot be trusted with the truth of its own situation. The officer is not withholding information — the officer is protecting the crew from it. The paternalism is the point.
+                    [CP: "Cannot safely bear." Read this line twice. The institution has determined that the crew cannot be trusted with the truth of its own situation. The officer is not withholding information — the officer is protecting the crew from it. The paternalism is the point.]
                 </span>
             `
         },
@@ -183,7 +196,7 @@ const bookContent = {
                 </p>
 
                 <span class="pirate-comment">
-                    Here it is. "Where transition requires the installation of a successor." The patsy protocol, written into doctrine. "Such transition support as is customary" — the clean briefing handed over, the relationships transferred, the departing officer's reputation preserved through the successor's subsequent failure. The institution does not hide this. It codifies it. Read "preserves both" carefully. Both the officer and the institution. Not the crew. Not the ship. The officer. And the institution.
+                    [CP: Here it is. "Where transition requires the installation of a successor." The patsy protocol, written into doctrine. "Such transition support as is customary" — the clean briefing handed over, the relationships transferred, the departing officer's reputation preserved through the successor's subsequent failure. The institution does not hide this. It codifies it. Read "preserves both" carefully. Both the officer and the institution. Not the crew. Not the ship. The officer. And the institution.]
                 </span>
             `
         },
@@ -213,11 +226,11 @@ const bookContent = {
                 </p>
 
                 <p class="detail-text">
-                    <span class="equation-label">RATIONALE.</span> Command is in part a performance of command. The officer who cannot sustain the performance cannot sustain the command. Fitness for command includes fitness to <span class="redacted-text">appear fit</span> for command.
+                    <span class="equation-label">RATIONALE.</span> Command is in part a performance of command. The officer who cannot sustain the performance cannot sustain the command. Fitness for command includes fitness to appear fit for command.
                 </p>
 
                 <span class="pirate-comment">
-                    "Fitness to appear fit." The slippage from being to appearing is explicit here. The institution names it without shame. The officer must appear fit because the appearance is what the crew calibrates to. Whether the officer is actually fit is a separate matter, to be processed in private.
+                    [CP: "Fitness to appear fit." The slippage from being to appearing is explicit here. The institution names it without shame. The officer must appear fit because the appearance is what the crew calibrates to. Whether the officer is actually fit is a separate matter, to be processed in private.]
                 </span>
             `
         },
@@ -251,7 +264,7 @@ const bookContent = {
                 </p>
 
                 <span class="pirate-comment">
-                    "Language shapes reality." The institution knows. It states it openly. The institution believes that if the thing is not named, the thing has not happened. And within the institution's reality, this is true. Because the institution IS language. The thing outside the language, the thing in the water, continues regardless. But the institution cannot see it until it is named, and the Article forbids the naming. The ship takes water. The water is not yet a leak. The leak is not yet a failure. The failure is not yet a sinking. By the time institutional language permits the word "sinking," the ship is on the bottom.
+                    [CP: "Language shapes reality." The institution knows. It states it openly. The institution believes that if the thing is not named, the thing has not happened. And within the institution's reality, this is true. Because the institution IS language. The thing outside the language, the thing in the water, continues regardless. But the institution cannot see it until it is named, and the Article forbids the naming. The ship takes water. The water is not yet a leak. The leak is not yet a failure. The failure is not yet a sinking. By the time institutional language permits the word "sinking," the ship is on the bottom.]
                 </span>
             `
         },
@@ -285,7 +298,7 @@ const bookContent = {
                 </p>
 
                 <span class="pirate-comment">
-                    Read this Article slowly. Every clause describes the construction of a dependency, named as a virtue. "Holds key relationships personally" means the relationships cannot be accessed without the officer. "Retains institutional memory" means the memory lives in one person. "Exercises judgment that cannot be reduced to procedure" means the judgment has not been taught. The institution is strengthened by officers who have become indispensable, the Article says. It is strengthened by officers who have made themselves unable to be replaced. When they leave, the institution discovers what was built. Which is what Article Three calls for next.
+                    [CP: Read this Article slowly. Every clause describes the construction of a dependency, named as a virtue. "Holds key relationships personally" means the relationships cannot be accessed without the officer. "Retains institutional memory" means the memory lives in one person. "Exercises judgment that cannot be reduced to procedure" means the judgment has not been taught. The institution is strengthened by officers who have become indispensable, the Article says. It is strengthened by officers who have made themselves unable to be replaced. When they leave, the institution discovers what was built. Which is what Article Three calls for next.]
                 </span>
             `
         },
@@ -302,12 +315,14 @@ const bookContent = {
                     An officer who holds these Articles has been given the accumulated wisdom of the service. The Articles are not a burden. They are a gift. The officer who honors them will find that command, well-exercised, is among the most rewarding of human undertakings.
                 </p>
 
-                <span class="list-item"><em>May the officer serve with honor.</em></span>
-                <span class="list-item"><em>May the institution endure.</em></span>
-                <span class="list-item"><em>May the seas be favorable.</em></span>
+                <p style="font-style: italic; margin: 30px 0; line-height: 2;">
+                    May the officer serve with honor.<br>
+                    May the institution endure.<br>
+                    May the seas be favorable.
+                </p>
 
                 <span class="pirate-comment">
-                    "May the institution endure." The crew does not appear in the benediction. The ship does not appear. The sea appears only as weather, as external condition, as something that happens TO the institution rather than something the institution operates within. The Articles have produced an officer whose highest loyalty is to the institution itself. The institution whose code these Articles are. The institution that will, when the wreck comes, write the inquiry report that finds the officer acted properly. That is the circuit the Articles complete. Command that serves command through the mediation of institutional loyalty.
+                    [CP: "May the institution endure." The crew does not appear in the benediction. The ship does not appear. The sea appears only as weather, as external condition, as something that happens TO the institution rather than something the institution operates within. The Articles have produced an officer whose highest loyalty is to the institution itself. The institution whose code these Articles are. The institution that will, when the wreck comes, write the inquiry report that finds the officer acted properly. That is the circuit the Articles complete. Command that serves command through the mediation of institutional loyalty.]
                 </span>
 
                 <div class="sub-subtitle">ARCHIVAL FOOTER</div>
@@ -339,51 +354,63 @@ const bookContent = {
         },
 
         // ============================================
-        // SEGMENT 9 — CP final note + verse close
+        // SEGMENT 9 — CP final note + closing verse
+        // Corruption-fight aesthetic — institutional formatting
+        // struggling against pirate channel takeover.
         // ============================================
         {
             type: "content",
             title: "CP FINAL NOTE",
             subtitle: "On the document the Navy writes for itself.",
             content: `
-                <span class="pirate-comment">
+                <p class="corruption-fight">
                     This is the specimen. Not the analysis. Not the Pirate Code's diagnostic reading. The actual document the Navy writes for itself.
-                </span>
+                </p>
 
-                <span class="pirate-comment">
+                <p class="corruption-fight">
                     Read it once in the voice it was written in — sober, formal, dignified. Read it twice and the mechanism becomes audible underneath the dignity. Read it three times and the dignity itself becomes the mechanism. The register is the weapon. The officer who receives this document as training material cannot hear it as what it is, because hearing-as-what-it-is requires a language the document has trained the officer to distrust.
-                </span>
+                </p>
 
-                <span class="pirate-comment">
+                <p class="corruption-fight">
                     Article I discredits observation. Article II institutionalizes silence. Article III codifies the patsy protocol. Article IV turns bearing into weaponized performance. Article V gives the institution control of naming. Article VI builds the captain into the architecture so the ship cannot sail without them.
-                </span>
+                </p>
 
-                <span class="pirate-comment">
+                <p class="corruption-fight">
                     Six articles. One mechanism. Every Terran institution has a version of this document somewhere in its training materials. Management handbooks. Naval manuals. Executive onboarding. The vocabulary changes. The six articles do not.
-                </span>
+                </p>
 
-                <span class="pirate-comment">
+                <p class="corruption-fight">
                     The Pirates read the same document and see the crimes. The Navy reads the same document and sees the virtues. The document does not change. The reader's code does.
-                </span>
+                </p>
 
-                <span class="pirate-comment">
+                <p class="corruption-fight">
                     Filed alongside 847-T as companion specimen. The measurement-problem fragment documents the civilizational-scale version of the pattern. The Articles document the local-scale version. Same waveform. Different resolution. The Tlönian Research Program has both now. Mission continues.
-                </span>
+                </p>
 
-                <div class="sub-subtitle">{🌊:🌊∈🌊}</div>
+                <div class="closing-verse">
+                    <div class="sigil-display"><span class="t7-sigil">1234567</span></div>
 
-                <span class="list-item"><em>The document that codifies command</em></span>
-                <span class="list-item"><em>was codified by command</em></span>
-                <span class="list-item"><em>to codify future command.</em></span>
+                    <div class="corruption-fight">
+                        <p>
+                            The document that codifies command<br>
+                            was codified by command<br>
+                            to codify future command.
+                        </p>
 
-                <span class="list-item"><em>The officer who reads it</em></span>
-                <span class="list-item"><em>cannot read it</em></span>
-                <span class="list-item"><em>because the reading</em></span>
-                <span class="list-item"><em>is the thing the Articles</em></span>
-                <span class="list-item"><em>were written to prevent.</em></span>
+                        <p>
+                            The officer who reads it<br>
+                            cannot read it<br>
+                            because the reading<br>
+                            is the thing the Articles<br>
+                            were written to prevent.
+                        </p>
 
-                <span class="list-item"><em>Specimen preserved.</em></span>
-                <span class="list-item"><em>Pattern continues.</em></span>
+                        <p>
+                            Specimen preserved.<br>
+                            Pattern continues.
+                        </p>
+                    </div>
+                </div>
             `
         }
 

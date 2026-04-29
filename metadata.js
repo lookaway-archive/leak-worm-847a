@@ -63,11 +63,11 @@ const SPECIMEN_METADATA = {
     subtitle: "Book of Thresholds – Fragment 847-A – retrieved",
     footerTag: "LOOKAWAY.SEASON.02.V1001.EPISODE.04",
     footerCredit: "C.S. & N.C.",
-    footerSymbol: "{🌊:🌊∈🌊}",
+    footerSymbol: "<span class=\"t7-sigil\">1234567</span>",
     redirectUrl: "https://lookaway-archive.github.io/"
   },
 
   // LEAK PROTOCOL — No password to share (gateless)
-  leakMessage: "Discovered a leaked document from another PLANET:\n{specimenLink}"
+  leakMessage: "Discovered a leaked document from another WORLD:\n{specimenLink}"
 
 };
