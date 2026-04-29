@@ -178,36 +178,95 @@ PATTERN: {🌊:🌊∈🌊}
    ============================================ */
 
 .closing-verse {
-    margin: 50px auto 30px auto;
-    max-width: 540px;
+    margin: 60px auto 30px auto;
+    max-width: 420px;
     text-align: center;
-    font-size: 16px;
-    line-height: 1.75;
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    line-height: 1.7;
+    letter-spacing: 0.4px;
     filter: blur(var(--text-body-blur));
+    opacity: 0.88;
 }
 
 .closing-verse p {
-    margin-bottom: 22px;
+    margin-bottom: 16px;
 }
 
 .closing-verse p:last-child {
     margin-bottom: 0;
-    margin-top: 36px;
-    font-size: 14px;
+    margin-top: 28px;
+    font-size: 11px;
+    letter-spacing: 1px;
 }
 
 .sigil-display {
     text-align: center;
-    font-size: 32px;
-    margin: 30px 0 45px 0;
-    letter-spacing: 6px;
+    font-size: 22px;
+    margin: 25px 0 32px 0;
+    letter-spacing: 4px;
     color: rgb(var(--text-r), var(--text-g), var(--text-b));
     text-shadow:
-        0 0 8px rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.9),
-        0 0 16px rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.6),
-        0 0 32px rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.4);
+        0 0 6px rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.85),
+        0 0 12px rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.55),
+        0 0 24px rgba(var(--glow-r), var(--glow-g), var(--glow-b), 0.35);
     filter: blur(var(--text-body-blur));
+    opacity: 0.9;
+}
+
+/* ============================================
+   PIRATE RETRIEVAL HEADER — Top stamp
+   The trace of our hand. Visible alive metadata that announces
+   the document is a pirate retrieval, not the original artifact.
+   Surfaces at the very top of the content surface, before the
+   facility's archival foreword begins.
+   ============================================ */
+
+.pirate-header-container {
+    width: 100%;
+    text-align: center;
+    margin: 0 0 60px 0;
+    padding: 0 20px;
+}
+
+.pirate-header {
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-style: italic;
+    color: rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.7);
+    text-shadow:
+        0 0 3px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.5),
+        0 0 7px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.25);
+    padding: 6px 14px;
+    border: 1px solid rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.35);
+    border-radius: 1px;
+    opacity: 0.78;
+    animation: pirate-stamp-flicker 5.5s ease-in-out infinite;
+    filter: blur(0.15px);
+}
+
+.pirate-header .stamp-sep {
+    margin: 0 8px;
+    opacity: 0.5;
+}
+
+.pirate-header .t7-sigil {
+    font-size: 11px;
+    letter-spacing: 0;
+    margin: 0 2px;
+}
+
+@keyframes pirate-stamp-flicker {
+    0%, 100% { opacity: 0.78; }
+    47% { opacity: 0.78; }
+    50% { opacity: 0.95; }
+    53% { opacity: 0.78; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pirate-header { animation: none !important; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1840,6 +1899,39 @@ function processHTMLForSentences(html) {
 // CONTENT VESSEL — Lazy-loaded pheromone segments
 // ==========================================
 
+// ==========================================
+// PIRATE RETRIEVAL HEADER — visible alive metadata
+// The pirate layer announcing itself at the top of the document.
+// Reads from SPECIMEN_METADATA.pirateRetrieval. Renders a small
+// stamp above all content. The trace of our hand.
+// ==========================================
+
+function renderPirateHeader() {
+    const meta = SPECIMEN_METADATA.pirateRetrieval;
+    if (!meta) return;
+
+    const contentDisplay = document.getElementById('contentDisplay');
+    if (!contentDisplay) return;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'pirate-header-container';
+    wrapper.innerHTML = `
+        <div class="pirate-header">
+            [<span class="t7-sigil">1234567</span>
+            <span class="stamp-sep">·</span>
+            ${meta.label || 'T7 RETRIEVAL'}
+            <span class="stamp-sep">·</span>
+            TUNING ${meta.tuning || 'v1001'}
+            <span class="stamp-sep">·</span>
+            ${meta.retrieved || ''}
+            <span class="stamp-sep">·</span>
+            <span class="t7-sigil">1234567</span>]
+        </div>
+    `;
+
+    contentDisplay.insertBefore(wrapper, contentDisplay.firstChild);
+}
+
 function createScreenPlaceholder(screenId) {
     const placeholder = document.createElement('div');
     placeholder.className = 'screen-placeholder';
@@ -1895,6 +1987,9 @@ function loadSingleScreen(screenId) {
 
 function setupProgressiveLoading() {
     const container = document.getElementById('contentDisplay');
+
+    // Inject pirate retrieval header at top of content surface
+    renderPirateHeader();
 
     const totalContentScreens = bookContent.screens.filter(s => s.type === 'content').length;
 

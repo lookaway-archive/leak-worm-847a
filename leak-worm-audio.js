@@ -844,17 +844,33 @@ function integrateLeakWormAudio() {
         };
     })(window.startPirateMode);
 
-    // Hook pirate typewriter — inject phosphor tick per character
+    // Hook pirate typewriter — inject phosphor tick per character.
+    // Handles <br> and <span>...</span> as units (preserves t7-sigil rendering).
     window.typewriterEffect = (function(originalFn) {
         return function(element, text, speed, callback) {
             element.style.opacity = '1';
             let i = 0;
             const interval = setInterval(() => {
                 if (i < text.length) {
+                    // <br> as unit
                     if (text.substr(i, 4) === '<br>') {
                         element.innerHTML += '<br>';
                         i += 4;
-                    } else {
+                    }
+                    // <span...>...</span> as unit
+                    else if (text.substr(i, 5) === '<span') {
+                        const closeIdx = text.indexOf('</span>', i);
+                        if (closeIdx !== -1) {
+                            const blockEnd = closeIdx + 7;
+                            element.innerHTML += text.substring(i, blockEnd);
+                            i = blockEnd;
+                        } else {
+                            element.innerHTML += text.charAt(i);
+                            i++;
+                            if (audio.isPirateMode) audio.triggerPhosphorTick();
+                        }
+                    }
+                    else {
                         element.innerHTML += text.charAt(i);
                         i++;
                         if (audio.isPirateMode) audio.triggerPhosphorTick();

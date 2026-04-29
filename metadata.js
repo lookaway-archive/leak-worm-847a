@@ -30,7 +30,7 @@
 
 const SPECIMEN_METADATA = {
 
-  // SPECIMEN IDENTITY
+  // SPECIMEN IDENTITY (FACILITY METADATA — relatively stable)
   specimen: {
     id: "LEAK-WORM-847A",
     fragment: "847-A",
@@ -38,6 +38,14 @@ const SPECIMEN_METADATA = {
     classification: "PARALLAX ARCHIVE RECOVERED DOCUMENT",
     retrieved: "April 29, 2026",
     tankUrl: "https://github.com/lookaway-archive/leak-worm-847a"
+  },
+
+  // PIRATE RETRIEVAL HEADER — visible alive metadata, top stamp
+  // The trace of our hand. Bumps when document is re-tuned.
+  pirateRetrieval: {
+    label: "T7 RETRIEVAL",
+    tuning: "v1001",
+    retrieved: "April 29, 2026"
   },
 
   // ACCESS RITUAL — GATELESS
