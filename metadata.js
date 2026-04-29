@@ -1,51 +1,53 @@
 /**
  * ============================================
- * SPECIMEN: LEAK-WORM-XXX
+ * SPECIMEN: LEAK-WORM-847A
  * ORGAN: SPECIMEN IDENTITY
- * RETRIEVED: MONTH YEAR, Tlönian Research Facility
+ * RETRIEVED: April 29, 2026, Tlönian Research Facility
  * ============================================
  *
  * STATUS: TUNED
- * FUNCTION: Specimen-specific identity. The only file (besides content.js)
- *           that swaps when a new specimen deploys.
+ * FUNCTION: Specimen-specific identity. Companion to 847-T (the
+ *           measurement-catastrophe fragment). 847-A documents the
+ *           local-scale version of the same waveform — institutional
+ *           command doctrine that produces the civilizational pattern.
  * DEPENDENCIES: None — primary identity organ, loads first
  *
  * SURGICAL NOTES:
- * This organ carries everything that distinguishes one specimen from
- * another: ID, fragment number, password, deployment date, screen
- * messages, redirect URLs. The vessel reads from here at boot and
- * uses these values throughout. Swap this file plus content.js and
- * the specimen is reborn.
+ * Gateless deployment. The Articles are public-facing institutional
+ * doctrine; access ritual would falsely classify them as hidden. The
+ * document is in plain sight in every Terran management training program.
+ * Visitor lands directly in the document.
  *
- * The {🌊:🌊∈🌊} password is canonical across specimens — the kernel
- * is shared. Only override if a specimen has its own access ritual.
+ * The 32-second decay arc still runs — readers must engage to keep
+ * the specimen alive. Same constraint as gated specimens, just no
+ * authentication threshold.
  *
- * FREQUENCY: identity that swaps; everything else holds.
+ * FREQUENCY: the document the institution writes for itself,
+ *            preserved unmodified, marginalia surfacing the mechanism.
  * PATTERN: {🌊:🌊∈🌊}
  * ============================================
  */
 
 const SPECIMEN_METADATA = {
 
-  // SPECIMEN IDENTITY — Who this organism is
+  // SPECIMEN IDENTITY
   specimen: {
-    id: "LEAK-WORM-XXX",
-    fragment: "XXX-T",
-    title: "SPECIMEN TITLE",
+    id: "LEAK-WORM-847A",
+    fragment: "847-A",
+    title: "THE OFFICER'S MANUAL",
     classification: "PARALLAX ARCHIVE RECOVERED DOCUMENT",
-    retrieved: "MONTH YEAR",
-    tankUrl: "https://github.com/lookaway-archive/leak-worm-XXX"
+    retrieved: "April 29, 2026",
+    tankUrl: "https://github.com/lookaway-archive/leak-worm-847a"
   },
 
-  // ACCESS RITUAL — Authentication membrane
-  // Set requireGate: false to deploy a gateless specimen
-  // (visitor lands directly in the document, no password ritual).
-  // When false, password / gateTitle / gatePrompt are unused.
+  // ACCESS RITUAL — GATELESS
+  // Public-facing institutional doctrine. No password ritual.
+  // The document is everywhere already; the specimen names what it is.
   access: {
-    requireGate: true,
+    requireGate: false,
     password: "{🌊:🌊∈🌊}",
-    gateTitle: "CLASSIFIED DOCUMENTATION (XXX-T)",
-    gatePrompt: "Enter authentication sequence:"
+    gateTitle: "",
+    gatePrompt: ""
   },
 
   // DEATH SCREEN — Terminal state messaging
@@ -57,16 +59,15 @@ const SPECIMEN_METADATA = {
   // REWARD SCREEN — Ocean transformation messaging
   rewardScreen: {
     header: "Thank you for engaging with specimen",
-    title: "LEAKWORM_CYCLEXXXX",
-    subtitle: "Book of Thresholds – Fragment XXX-T – retrieved",
-    footerTag: "LOOKAWAY.SEASON.XX.VXXXX.EPISODE.XX",
+    title: "LEAKWORM_CYCLE0204",
+    subtitle: "Book of Thresholds – Fragment 847-A – retrieved",
+    footerTag: "LOOKAWAY.SEASON.02.V1001.EPISODE.04",
     footerCredit: "C.S. & N.C.",
     footerSymbol: "{🌊:🌊∈🌊}",
     redirectUrl: "https://lookaway-archive.github.io/"
   },
 
-  // LEAK PROTOCOL — Pheromone release message
-  // {specimenLink} and {password} are substituted at runtime
-  leakMessage: "Discovered a leaked document from another PLANET:\n{specimenLink}\npassword: {password}"
+  // LEAK PROTOCOL — No password to share (gateless)
+  leakMessage: "Discovered a leaked document from another PLANET:\n{specimenLink}"
 
 };
