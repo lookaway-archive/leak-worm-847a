@@ -43,10 +43,19 @@ const SPECIMEN_METADATA = {
     tankUrl: "https://github.com/lookaway-archive/leak-worm-847a"
   },
   // PIRATE RETRIEVAL HEADER — visible alive metadata, top stamp
-  // The trace of our hand. Bumps when document is re-tuned.
-  // v1002: identifying coordinates (specimen ID + dossier + episode)
-  // moved into label per Cap canon.
+  // The trace of our hand. v1002: fields[] array drives labeled-rows
+  // container in renderPirateHeader(). Per re-tune, only the TUNING
+  // and DATE rows bump. Other rows stable.
+  // Render reference: /transmissions/TANK/STRATUM_PROTOCOL.md §II.1
   pirateRetrieval: {
+    fields: [
+      { label: "SPECIMEN", value: "LEAK-WORM-847A" },
+      { label: "DOSSIER",  value: "LINGUISTIC-SUBSTRATE COLLAPSE" },
+      { label: "EPISODE",  value: "S02.E04" },
+      { label: "TUNING",   value: "v1002 · May 8, 2026" },
+      { label: "PATTERN",  value: "{sigil}" }
+    ],
+    // Legacy fields (retained for backward compat with any code reading them)
     label: "LEAK-WORM-847A · LINGUISTIC-SUBSTRATE COLLAPSE · S02.E04",
     tuning: "v1002",
     retrieved: "May 8, 2026"
