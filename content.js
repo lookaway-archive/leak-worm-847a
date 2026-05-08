@@ -76,18 +76,20 @@ const bookContent = {
             title: "THE OFFICER'S MANUAL",
             subtitle: "Third Bureau of Reality Cartography — recovery notes",
             content: `
-                <div class="facility-stratum">
-                    <p>
-                        The following specimen was retrieved from Earth's institutional archives during routine pre-extinction documentation. It appears in multiple partial forms across the civilization's historical record — in naval manuals dating to their 18th century, in corporate governance literature of their 20th and 21st centuries, in executive education materials, in government leadership curricula. No original source has been located. The text appears to have been transmitted through institutional training rather than single authorship.
-                    </p>
+                <div class="facility-foreword-block">
+                    <div class="facility-stratum">
+                        <p>
+                            The following specimen was retrieved from Earth's institutional archives during routine pre-extinction documentation. It appears in multiple partial forms across the civilization's historical record — in naval manuals dating to their 18th century, in corporate governance literature of their 20th and 21st centuries, in executive education materials, in government leadership curricula. No original source has been located. The text appears to have been transmitted through institutional training rather than single authorship.
+                        </p>
 
-                    <p>
-                        We have assembled this composite from eleven partial instances. The six articles are identical across all recovered fragments. Only the institutional preamble and rationales vary. The version presented here synthesizes the most internally consistent readings.
-                    </p>
+                        <p>
+                            We have assembled this composite from eleven partial instances. The six articles are identical across all recovered fragments. Only the institutional preamble and rationales vary. The version presented here synthesizes the most internally consistent readings.
+                        </p>
 
-                    <p>
-                        The text is reproduced in its original voice, unmodified. The institution speaks here in the register it used to address its own officers. No analytical intervention has been introduced.
-                    </p>
+                        <p>
+                            The text is reproduced in its original voice, unmodified. The institution speaks here in the register it used to address its own officers. No analytical intervention has been introduced.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="warning-block">
@@ -119,9 +121,15 @@ const bookContent = {
                     </p>
                 </div>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: "willingly"]
                 </span>
+
+
+                </div>
             `
         },
 
@@ -149,9 +157,15 @@ const bookContent = {
                     <span class="equation-label">RATIONALE.</span> Command must be legible. Decisions must be defensible. The officer who acts upon institutional intelligence acts with institutional authority. The officer who acts upon private reading acts alone.
                 </p>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: so.... the briefing's authority is derived from its preparation process, not its correspondence to field-contact. confidence in procedure replaces accurate observation... the officer who sees the water clearly is disloyal to the briefing.]
                 </span>
+
+
+                </div>
             `
         },
 
@@ -179,9 +193,15 @@ const bookContent = {
                     <span class="equation-label">RATIONALE.</span> The officer is entrusted with information the crew cannot safely bear. This is the essence of command responsibility. To share indiscriminately is to abdicate the burden the officer was commissioned to carry.
                 </p>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: "cannot safely bear." ... the crew cannot be trusted with the truth of its own situation... paternalism is the point.]
                 </span>
+
+
+                </div>
             `
         },
 
@@ -213,9 +233,15 @@ const bookContent = {
                     <span class="equation-label">RATIONALE.</span> The institution endures. Individual commands are temporary. The officer who understands this truth departs at the moment that preserves both.
                 </p>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: here it is. "where transition requires the installation of a successor." the patsy protocol, written into doctrine. "such transition support as is customary"... the clean briefing handed over, the relationships transferred, the departing officer's reputation preserved through the successor's subsequent failure. the institution does not hide this. it codifies it.]
                 </span>
+
+
+                </div>
             `
         },
 
@@ -247,9 +273,15 @@ const bookContent = {
                     <span class="equation-label">RATIONALE.</span> Command is in part a performance of command. The officer who cannot sustain the performance cannot sustain the command. Fitness for command includes fitness to appear fit for command.
                 </p>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: "fitness to appear fit." the slippage from being to appearing is explicit here. Whether the officer is actually fit is a separate matter, to be processed in private.]
                 </span>
+
+
+                </div>
             `
         },
 
@@ -281,9 +313,15 @@ const bookContent = {
                     <span class="equation-label">RATIONALE.</span> Language shapes reality. The institution's language shapes the institution's reality. The officer who controls language controls outcome.
                 </p>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: "language shapes reality." the institution knows. it states it openly. the institution believes that if the thing is not named, the thing has not happened. and within the institution's frame, this is true. because the institution IS language. the thing outside the language, the thing in the water, continues regardless. but the institution cannot see it until it is named, and the Article forbids the naming. the ship takes water. the water is not yet a leak. the leak is not yet a failure. the failure is not yet a sinking.... by the time institutional language permits the word "sinking," the ship is on the bottom.]
                 </span>
+
+
+                </div>
             `
         },
 
@@ -315,9 +353,15 @@ const bookContent = {
                     <span class="equation-label">RATIONALE.</span> The institution is strengthened by officers who have become indispensable through service. Such officers are the institution's continuity. Such officers are the institution's memory. The officer who achieves this standing has fulfilled command's highest responsibility.
                 </p>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: every clause describes the construction of a dependency, named as a virtue. "holds key relationships personally" means the relationships cannot be accessed without the officer. "retains institutional memory" means the memory lives in one person. "exercises judgment that cannot be reduced to procedure" means the judgment has not been taught. the institution is strengthened by officers who have become indispensable, the Article says...]
                 </span>
+
+
+                </div>
             `
         },
 
@@ -341,9 +385,15 @@ const bookContent = {
                     </em>
                 </p>
 
-                <span class="pirate-comment">
+                <div class="pirate-comment-container">
+
+
+                    <span class="pirate-comment">
                     [CP: interesting how the benediction doesn't include the crew. or the ship. well... why would you include what's been sacrificed and what's been hollowed in a benediction.]
                 </span>
+
+
+                </div>
 
                 <div class="archival-block facility-stratum">
                     <div class="sub-subtitle">ARCHIVAL FOOTER</div>
@@ -385,6 +435,7 @@ const bookContent = {
             title: "CP FINAL NOTE",
             subtitle: "On the document the Navy writes for itself.",
             content: `
+                <div class="corruption-fight-container">
                 <p class="corruption-fight">
                     Six articles. One mechanism. Every Terran institution has a version of this document somewhere in its training materials. Management handbooks. Naval manuals. Executive onboarding. The vocabulary changes. The six articles do not.
                 </p>
@@ -396,6 +447,7 @@ const bookContent = {
                 <p class="corruption-fight">
                     Filed alongside 847-T as companion specimen. The measurement-problem fragment documents the civilizational-scale version of the pattern. The Articles document the local-scale version. Same waveform. Different resolution. The Tlönian Research Program has both. wonder what else is in this arcvhies....
                 </p>
+                </div>
 
                 <div class="closing-verse">
                     <div class="sigil-display"><span class="t7-sigil">1234567</span></div>
