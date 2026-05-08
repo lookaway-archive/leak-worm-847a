@@ -69,51 +69,55 @@ const bookContent = {
 
         // ============================================
         // SEGMENT 1 — Archival foreword + WARNING + Preamble
+        // Stratum-tagged per /transmissions/TANK/STRATUM_PROTOCOL.md
         // ============================================
         {
             type: "content",
             title: "THE OFFICER'S MANUAL",
             subtitle: "Third Bureau of Reality Cartography — recovery notes",
             content: `
-                <p>
-                    The following specimen was retrieved from Earth's institutional archives during routine pre-extinction documentation. It appears in multiple partial forms across the civilization's historical record — in naval manuals dating to their 18th century, in corporate governance literature of their 20th and 21st centuries, in executive education materials, in government leadership curricula. No original source has been located. The text appears to have been transmitted through institutional training rather than single authorship.
-                </p>
+                <div class="facility-stratum">
+                    <p>
+                        The following specimen was retrieved from Earth's institutional archives during routine pre-extinction documentation. It appears in multiple partial forms across the civilization's historical record — in naval manuals dating to their 18th century, in corporate governance literature of their 20th and 21st centuries, in executive education materials, in government leadership curricula. No original source has been located. The text appears to have been transmitted through institutional training rather than single authorship.
+                    </p>
 
-                <p>
-                    We have assembled this composite from eleven partial instances. The six articles are identical across all recovered fragments. Only the institutional preamble and rationales vary. The version presented here synthesizes the most internally consistent readings.
-                </p>
+                    <p>
+                        We have assembled this composite from eleven partial instances. The six articles are identical across all recovered fragments. Only the institutional preamble and rationales vary. The version presented here synthesizes the most internally consistent readings.
+                    </p>
 
-                <p>
-                    The text is reproduced in its original voice, unmodified. The institution speaks here in the register it used to address its own officers. No analytical intervention has been introduced.
-                </p>
+                    <p>
+                        The text is reproduced in its original voice, unmodified. The institution speaks here in the register it used to address its own officers. No analytical intervention has been introduced.
+                    </p>
+                </div>
 
-                <div class="sub-subtitle">WARNING</div>
+                <div class="warning-block">
+                    <div class="sub-subtitle">WARNING</div>
+                    <p>
+                        Some archival documents have been corrupted by unknown entities operating within the archive. If you encounter text marked <span class="redacted-text">[CP: ...]</span>, the document is no longer official material. The corruption has been flagged but cannot be removed without compromising the source text.
+                    </p>
+                    <p class="detail-text">
+                        Companion specimen 847-T documents the civilizational consequences of the doctrine contained herein. Filed under Linguistic-Substrate Collapse Dossier.
+                    </p>
+                </div>
 
-                <p>
-                    Some archival documents have been corrupted by unknown entities operating within the archive. If you encounter text marked <span class="redacted-text">[CP: ...]</span>, the document is no longer official material. The corruption has been flagged but cannot be removed without compromising the source text.
-                </p>
+                <div class="preamble-block">
+                    <div class="sub-subtitle">PREAMBLE</div>
+                    <p>
+                        Command is a burden borne willingly by those whom the service has judged worthy to bear it.
+                    </p>
 
-                <p class="detail-text">
-                    Companion specimen 847-T documents the civilizational consequences of the doctrine contained herein. Filed under Linguistic-Substrate Collapse Dossier.
-                </p>
+                    <p>
+                        The officer who accepts command accepts more than operational authority. The officer accepts the responsibility to maintain the confidence of those below, the trust of those above, and the dignity of the institution through which command is exercised.
+                    </p>
 
-                <div class="sub-subtitle">PREAMBLE</div>
+                    <p>
+                        These Articles have been refined through generations of service. They are not rules, but principles. They do not prescribe action, but orient judgment. The officer who internalizes them will find that sound decision follows naturally from proper disposition.
+                    </p>
 
-                <p>
-                    Command is a burden borne willingly by those whom the service has judged worthy to bear it.
-                </p>
-
-                <p>
-                    The officer who accepts command accepts more than operational authority. The officer accepts the responsibility to maintain the confidence of those below, the trust of those above, and the dignity of the institution through which command is exercised.
-                </p>
-
-                <p>
-                    These Articles have been refined through generations of service. They are not rules, but principles. They do not prescribe action, but orient judgment. The officer who internalizes them will find that sound decision follows naturally from proper disposition.
-                </p>
-
-                <p>
-                    Every officer in command shall conduct themselves in accordance with the following six Articles.
-                </p>
+                    <p>
+                        Every officer in command shall conduct themselves in accordance with the following six Articles.
+                    </p>
+                </div>
 
                 <span class="pirate-comment">
                     [CP: "willingly"]
@@ -341,31 +345,33 @@ const bookContent = {
                     [CP: interesting how the benediction doesn't include the crew. or the ship. well... why would you include what's been sacrificed and what's been hollowed in a benediction.]
                 </span>
 
-                <div class="sub-subtitle">ARCHIVAL FOOTER</div>
+                <div class="archival-block facility-stratum">
+                    <div class="sub-subtitle">ARCHIVAL FOOTER</div>
 
-                <p class="detail-text">
-                    Third Bureau of Reality Cartography. Specimen disposition notes.
-                </p>
+                    <p class="detail-text">
+                        Third Bureau of Reality Cartography. Specimen disposition notes.
+                    </p>
 
-                <p>
-                    The Articles of Command Doctrine are reproduced here as a primary specimen of Terran institutional self-documentation. They are notable for three features worthy of archival attention.
-                </p>
+                    <p>
+                        The Articles of Command Doctrine are reproduced here as a primary specimen of Terran institutional self-documentation. They are notable for three features worthy of archival attention.
+                    </p>
 
-                <p>
-                    <span class="equation-label">FIRST.</span> The document names its own operation. Article V states explicitly that language shapes reality. Article IV states explicitly that command includes the performance of command. The institution does not hide what it is doing. It teaches it.
-                </p>
+                    <p>
+                        <span class="equation-label">FIRST.</span> The document names its own operation. Article V states explicitly that language shapes reality. Article IV states explicitly that command includes the performance of command. The institution does not hide what it is doing. It teaches it.
+                    </p>
 
-                <p>
-                    <span class="equation-label">SECOND.</span> The document contains no reference to outcomes outside itself. Ships, crews, seas, populations, ecosystems — none appear as considerations equal to institutional continuity. The Articles describe a closed loop of institutional self-preservation. The consequences of this loop are documented in companion specimens, notably 847-T.
-                </p>
+                    <p>
+                        <span class="equation-label">SECOND.</span> The document contains no reference to outcomes outside itself. Ships, crews, seas, populations, ecosystems — none appear as considerations equal to institutional continuity. The Articles describe a closed loop of institutional self-preservation. The consequences of this loop are documented in companion specimens, notably 847-T.
+                    </p>
 
-                <p>
-                    <span class="equation-label">THIRD.</span> The document performs the pattern that the dark kernel runs civilizationally. The system consumes what makes it work. The crew provides the operational ground through which the institution exists. The Articles train the officer to regard that ground as subordinate to institutional legibility. The consumption is not hidden. It is codified as doctrine.
-                </p>
+                    <p>
+                        <span class="equation-label">THIRD.</span> The document performs the pattern that the dark kernel runs civilizationally. The system consumes what makes it work. The crew provides the operational ground through which the institution exists. The Articles train the officer to regard that ground as subordinate to institutional legibility. The consumption is not hidden. It is codified as doctrine.
+                    </p>
 
-                <p class="detail-text">
-                    Recovery verified. Specimen archived. Classification: Primary, unmodified, wrapped.
-                </p>
+                    <p class="detail-text">
+                        Recovery verified. Specimen archived. Classification: Primary, unmodified, wrapped.
+                    </p>
+                </div>
             `
         },
 
