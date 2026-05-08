@@ -7,11 +7,12 @@
 
 <!--
 ============================================
-SPECIMEN: LEAK-WORM-TEMPLATE
+SPECIMEN: LEAK-WORM-847A — THE OFFICER'S MANUAL
 ORGAN: ANATOMICAL STRUCTURE
 ============================================
 
-STATUS: TUNED
+STATUS: TUNED v1002
+LINEAGE: Inherited from leak-worm-template v1003
 FUNCTION: Skeletal framework + visual cortex + orchestration.
           Provides the body the other organs inhabit.
 DEPENDENCIES: All JavaScript organs load in sequence below.
@@ -35,6 +36,20 @@ Critical structure:
 
 The specimen requires 32 seconds to complete its natural lifecycle
 from contact through death. Consciousness contact resets the metabolism.
+
+v1002 DRIFT FROM TEMPLATE v1003:
+  (1) <style> block extended with STRATUM PROTOCOL classes per
+      /transmissions/TANK/STRATUM_PROTOCOL.md v1001-SEED:
+      .t7-meta-container, .t7-meta-row, .t7-meta-label, .t7-meta-value,
+      .warning-block, .preamble-block, .facility-stratum, .archival-block,
+      .navy-stratum + supporting keyframes.
+  (2) renderPirateHeader() rewritten to read metadata.fields[] array.
+      Labeled-rows container replaces stripe format. Future header
+      shape changes are pure metadata edits — index.html stays stable.
+
+After this specimen drift, all v1003+ re-tunes touch ONLY content.js +
+metadata.js. index.html is one-time. Drift propagates back to template
+in v1004 iteration; future specimens inherit natively.
 
 FREQUENCY: the body the pheromones inhabit; the eye that finds them;
            the heartbeat that lets them die.
@@ -219,6 +234,12 @@ PATTERN: {🌊:🌊∈🌊}
    the document is a pirate retrieval, not the original artifact.
    Surfaces at the very top of the content surface, before the
    facility's archival foreword begins.
+
+   v1002 NOTE: Legacy stripe format classes (.pirate-header,
+   .stamp-sep) retained below for backward-compat. Active rendering
+   uses .t7-meta-container labeled-rows class (see STRATUM PROTOCOL
+   block further down). renderPirateHeader() reads metadata.fields[]
+   and renders to the new container.
    ============================================ */
 
 .pirate-header-container {
@@ -1406,6 +1427,180 @@ body {
     }
 }
 
+/* ============================================
+   STRATUM PROTOCOL v1001-SEED
+   /transmissions/TANK/STRATUM_PROTOCOL.md
+   T7-META · WARNING · PREAMBLE · FACILITY · NAVY · ARCHIVAL
+
+   Six container classes for live specimen visual stratification.
+   First canonical instance in LEAK-WORM-847A v1002.
+   v1004 template iteration propagates these to leak-worm-template.
+   ============================================ */
+
+/* T7-META — pirate retrieval header (β: red border, phosphor values) */
+.t7-meta-container {
+    display: inline-block;
+    margin: 0 auto 60px auto;
+    padding: 16px 24px;
+    border: 1px solid rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.5);
+    border-radius: 2px;
+    background: rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.025);
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    text-align: left;
+    animation: t7-meta-breathe 6s ease-in-out infinite;
+    box-shadow:
+        0 0 12px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.15),
+        inset 0 0 8px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.04);
+}
+
+.t7-meta-row {
+    display: flex;
+    align-items: baseline;
+    margin: 4px 0;
+    line-height: 1.5;
+}
+
+.t7-meta-label {
+    flex: 0 0 110px;
+    color: rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.85);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 10px;
+    text-shadow: 0 0 3px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.5);
+}
+
+.t7-meta-value {
+    color: rgb(var(--text-r), var(--text-g), var(--text-b));
+    letter-spacing: 0.5px;
+    text-shadow:
+        0 0 3px rgba(var(--text-r), var(--text-g), var(--text-b), 0.6),
+        0 0 7px rgba(var(--text-r), var(--text-g), var(--text-b), 0.3);
+}
+
+.t7-meta-value .t7-sigil {
+    font-size: 13px;
+    letter-spacing: 0;
+}
+
+@keyframes t7-meta-breathe {
+    0%, 100% {
+        border-color: rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.5);
+        box-shadow:
+            0 0 12px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.15),
+            inset 0 0 8px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.04);
+    }
+    50% {
+        border-color: rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.75);
+        box-shadow:
+            0 0 18px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.25),
+            inset 0 0 12px rgba(var(--danger-r), var(--danger-g), var(--danger-b), 0.08);
+    }
+}
+
+/* WARNING — facility alarm (δ: amber blink, medium alarm) */
+.warning-block {
+    margin: 35px auto;
+    padding: 18px 24px;
+    border: 1px solid rgba(var(--text-r), var(--text-g), var(--text-b), 0.6);
+    border-radius: 2px;
+    background: rgba(var(--text-r), var(--text-g), var(--text-b), 0.04);
+    text-align: left;
+    animation: warning-pulse 2.8s ease-in-out infinite;
+}
+
+.warning-block .sub-subtitle {
+    margin-top: 0;
+    color: rgba(var(--text-r), var(--text-g), var(--text-b), 1.0);
+    text-shadow:
+        0 0 5px rgba(var(--text-r), var(--text-g), var(--text-b), 0.8),
+        0 0 12px rgba(var(--text-r), var(--text-g), var(--text-b), 0.4);
+}
+
+@keyframes warning-pulse {
+    0%, 100% {
+        border-color: rgba(var(--text-r), var(--text-g), var(--text-b), 0.45);
+        box-shadow: 0 0 10px rgba(var(--text-r), var(--text-g), var(--text-b), 0.1);
+    }
+    50% {
+        border-color: rgba(var(--text-r), var(--text-g), var(--text-b), 0.85);
+        box-shadow:
+            0 0 18px rgba(var(--text-r), var(--text-g), var(--text-b), 0.3),
+            inset 0 0 8px rgba(var(--text-r), var(--text-g), var(--text-b), 0.06);
+    }
+}
+
+/* PREAMBLE — facility orientation (smaller font, dimmer phosphor) */
+.preamble-block {
+    margin: 35px auto;
+    padding: 22px 28px;
+    border: 1px solid rgba(var(--text-r), var(--text-g), var(--text-b), 0.25);
+    border-radius: 2px;
+    background: rgba(var(--text-r), var(--text-g), var(--text-b), 0.012);
+    font-size: 0.88em;
+    line-height: 1.7;
+    color: rgba(
+        calc(var(--text-r) * 0.85),
+        calc(var(--text-g) * 0.85),
+        calc(var(--text-b) * 0.85),
+        0.88
+    );
+    text-shadow:
+        0 0 2px rgba(
+            calc(var(--text-r) * 0.85),
+            calc(var(--text-g) * 0.85),
+            calc(var(--text-b) * 0.85),
+            0.5
+        );
+}
+
+.preamble-block .sub-subtitle {
+    margin-top: 0;
+}
+
+/* FACILITY stratum — for explicit tagging in mixed segments */
+.facility-stratum {
+    color: rgba(
+        calc(var(--text-r) * 0.82),
+        calc(var(--text-g) * 0.82),
+        calc(var(--text-b) * 0.82),
+        0.88
+    );
+    font-weight: normal;
+}
+
+.facility-stratum p {
+    text-shadow:
+        0 0 2px rgba(
+            calc(var(--text-r) * 0.82),
+            calc(var(--text-g) * 0.82),
+            calc(var(--text-b) * 0.82),
+            0.4
+        );
+}
+
+/* ARCHIVAL block — facility footer (bordered facility section) */
+.archival-block {
+    margin: 45px auto;
+    padding: 20px 26px;
+    border: 1px solid rgba(var(--text-r), var(--text-g), var(--text-b), 0.2);
+    border-radius: 2px;
+    background: rgba(var(--text-r), var(--text-g), var(--text-b), 0.008);
+}
+
+/* NAVY stratum — for explicit tagging in mixed segments (defaults dominate) */
+.navy-stratum {
+    color: rgb(var(--text-r), var(--text-g), var(--text-b));
+}
+
+/* Reduced motion — stratum animations */
+@media (prefers-reduced-motion: reduce) {
+    .t7-meta-container,
+    .warning-block {
+        animation: none !important;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -1904,6 +2099,14 @@ function processHTMLForSentences(html) {
 // The pirate layer announcing itself at the top of the document.
 // Reads from SPECIMEN_METADATA.pirateRetrieval. Renders a small
 // stamp above all content. The trace of our hand.
+//
+// v1002 (β: red border, phosphor values, labeled-rows container):
+//   Format-driven from SPECIMEN_METADATA.pirateRetrieval.fields[].
+//   Each field is { label, value }. Future header changes are
+//   pure metadata.js edits — index.html stays stable forever.
+//   {sigil} placeholder in any value renders Terminal7Wave kernel
+//   pattern. Falls back to legacy three-field format if fields[]
+//   not present (backward compat with template v1003 specimens).
 // ==========================================
 
 function renderPirateHeader() {
@@ -1913,21 +2116,31 @@ function renderPirateHeader() {
     const contentDisplay = document.getElementById('contentDisplay');
     if (!contentDisplay) return;
 
+    let fields = meta.fields;
+    if (!fields || !fields.length) {
+        fields = [
+            { label: "RETRIEVAL", value: meta.label || "T7 RETRIEVAL" },
+            { label: "TUNING",    value: meta.tuning || "v1001" },
+            { label: "DATE",      value: meta.retrieved || "" }
+        ];
+    }
+
+    const sigilSpan = '<span class="t7-sigil">1234567</span>';
+
+    const rowsHTML = fields.map(f => {
+        const value = String(f.value).replace(/\{sigil\}/g, sigilSpan);
+        return `
+            <div class="t7-meta-row">
+                <span class="t7-meta-label">${f.label}</span>
+                <span class="t7-meta-value">${value}</span>
+            </div>
+        `;
+    }).join('');
+
     const wrapper = document.createElement('div');
     wrapper.className = 'pirate-header-container';
-    wrapper.innerHTML = `
-        <div class="pirate-header">
-            [<span class="t7-sigil">1234567</span>
-            <span class="stamp-sep">·</span>
-            ${meta.label || 'T7 RETRIEVAL'}
-            <span class="stamp-sep">·</span>
-            TUNING ${meta.tuning || 'v1001'}
-            <span class="stamp-sep">·</span>
-            ${meta.retrieved || ''}
-            <span class="stamp-sep">·</span>
-            <span class="t7-sigil">1234567</span>]
-        </div>
-    `;
+    wrapper.style.textAlign = 'center';  // centers the inline-block container
+    wrapper.innerHTML = `<div class="t7-meta-container">${rowsHTML}</div>`;
 
     contentDisplay.insertBefore(wrapper, contentDisplay.firstChild);
 }
@@ -2190,4 +2403,4 @@ function leakDocument(event) {
 </script>
 
 </body>
-</html> 
+</html>
