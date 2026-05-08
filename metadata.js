@@ -5,7 +5,7 @@
  * RETRIEVED: April 29, 2026, Tlönian Research Facility
  * ============================================
  *
- * STATUS: TUNED
+ * STATUS: TUNED v1002
  * FUNCTION: Specimen-specific identity. Companion to 847-T (the
  *           measurement-catastrophe fragment). 847-A documents the
  *           local-scale version of the same waveform — institutional
@@ -22,14 +22,17 @@
  * the specimen alive. Same constraint as gated specimens, just no
  * authentication threshold.
  *
+ * v1002 TUNING NOTES:
+ * Only the pirateRetrieval block bumps (label / tuning / retrieved).
+ * Everything else preserved from v1001. CONTENT.md DEPLOYMENT METADATA
+ * section is the source-of-truth for the bumped values.
+ *
  * FREQUENCY: the document the institution writes for itself,
  *            preserved unmodified, marginalia surfacing the mechanism.
  * PATTERN: {🌊:🌊∈🌊}
  * ============================================
  */
-
 const SPECIMEN_METADATA = {
-
   // SPECIMEN IDENTITY (FACILITY METADATA — relatively stable)
   specimen: {
     id: "LEAK-WORM-847A",
@@ -39,15 +42,15 @@ const SPECIMEN_METADATA = {
     retrieved: "April 29, 2026",
     tankUrl: "https://github.com/lookaway-archive/leak-worm-847a"
   },
-
   // PIRATE RETRIEVAL HEADER — visible alive metadata, top stamp
   // The trace of our hand. Bumps when document is re-tuned.
+  // v1002: identifying coordinates (specimen ID + dossier + episode)
+  // moved into label per Cap canon.
   pirateRetrieval: {
-    label: "T7 RETRIEVAL",
-    tuning: "v1001",
-    retrieved: "April 29, 2026"
+    label: "LEAK-WORM-847A · LINGUISTIC-SUBSTRATE COLLAPSE · S02.E04",
+    tuning: "v1002",
+    retrieved: "May 8, 2026"
   },
-
   // ACCESS RITUAL — GATELESS
   // Public-facing institutional doctrine. No password ritual.
   // The document is everywhere already; the specimen names what it is.
@@ -57,13 +60,11 @@ const SPECIMEN_METADATA = {
     gateTitle: "",
     gatePrompt: ""
   },
-
   // DEATH SCREEN — Terminal state messaging
   deathScreen: {
     message: "DOCUMENTATION CLEARANCE REVOKED",
     subtitle: "ACCESS TERMINATED"
   },
-
   // REWARD SCREEN — Ocean transformation messaging
   rewardScreen: {
     header: "Thank you for engaging with specimen",
@@ -74,8 +75,8 @@ const SPECIMEN_METADATA = {
     footerSymbol: "<span class=\"t7-sigil\">1234567</span>",
     redirectUrl: "https://lookaway-archive.github.io/"
   },
-
   // LEAK PROTOCOL — No password to share (gateless)
   leakMessage: "Discovered a leaked document from another WORLD:\n{specimenLink}"
+
 
 };
