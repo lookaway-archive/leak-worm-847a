@@ -1917,13 +1917,15 @@ function renderPirateHeader() {
     wrapper.className = 'pirate-header-container';
     wrapper.innerHTML = `
         <div class="pirate-header">
-            [ <span class="t7-sigil">1234567</span>
+            [<span class="t7-sigil">1234567</span>
             <span class="stamp-sep">·</span>
             ${meta.label || 'T7 RETRIEVAL'}
             <span class="stamp-sep">·</span>
             TUNING ${meta.tuning || 'v1001'}
             <span class="stamp-sep">·</span>
-            ${meta.retrieved || ''} ]
+            ${meta.retrieved || ''}
+            <span class="stamp-sep">·</span>
+            <span class="t7-sigil">1234567</span>]
         </div>
     `;
 
